@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+
+  {% if results_number is number(0) %}
+      <div> There is no recipes meeting your criteria... </div>
+  {% else %}
+      <div>Number of recipes: {{ results_number }} </div><br>
+            {% for recipe in recipes_result %}
+                  <div> <a href="/recipe?title={{ recipe }}"> {{ recipe }} </a> </div>
+            {% endfor %}
+ {% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+
+  {% if results_number==0 %}
+      <div> No recipes found... </div>
+  {% else %}
+      <div>Number of recipes: {{ results_number }} </div><br>
+
+            {% for recipe in recipes_result %}
+                  <div> <a href="/recipe_search?title={{ recipe }}"> {{ recipe }} </a> </div>
+            {% endfor %}
+ {% endif %}
+{% endblock %}

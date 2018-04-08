@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Filter
+{% endblock %}
+
+{% block main %}
+    <form action="/process" enctype="multipart/form-data" method="post">
+    <table style="width:100%">
+        <tr>
+            <td>
+                Please check your allergy type(s): <br>
+                    {% if 'gluten' in user_allergies %}
+                    <div>
+                      <input name="Gluten/Wheat" type="checkbox" checked/>  Gluten/Wheat
+                    </div>
+                    {% else %}
+                    <div>
+                      <input name="Gluten/Wheat" type="checkbox"/>  Gluten/Wheat
+                    </div>
+                    {% endif %}
+                    {% if 'dairy' in user_allergies %}
+                    <div>
+                      <input name="Dairy" type="checkbox" checked/> Dairy
+                    </div>
+                    {% else %}
+                    <div>
+                      <input name="Dairy" type="checkbox"/> Dairy
+                    </div>
+                    {% endif %}
+                    {% if 'eggs' in user_allergies %}
+                    <div>
+                        <input name="Eggs" type="checkbox"/ checked> Eggs
+                    </<div>
+                         {% else %}
+                    <div>
+                      <input name="Eggs" type="checkbox"/> Eggs
+                    </div>
+                    {% endif %}
+                    {% if 'nuts' in user_allergies %}
+                    <div>
+                        <input name="Nuts" type="checkbox" checked/> Nuts
+                    </div>
+                    {% else %}
+                    <div>
+                        <input name="Nuts" type="checkbox"/> Nuts
+                    </div>
+                    {% endif %}
+                    {% if 'honey' in user_allergies %}
+                    <div>
+                        <input name="Honey" type="checkbox" checked/> Honey
+                    </div>
+                    {% else %}
+                    <div>
+                        <input name="Honey" type="checkbox"/> Honey
+                    </div>
+                    {% endif %}
+                    {% if 'soy' in user_allergies %}
+                    <div>
+                        <input name="Soy" type="checkbox" checked/> Soy
+                    </div>
+                    {% else %}
+                    <div>
+                        <input name="Soy" type="checkbox"/> Soy
+                    </div>
+                    {% endif %}
+                    {% if 'seafood' in user_allergies %}
+                    <div>
+                        <input name="Seafood" type="checkbox" checked/> Seafood
+                    </div>
+                    {% else %}
+                    <div>
+                        <input name="Seafood" type="checkbox"/> Seafood
+                    </div>
+                    {% endif %}
+
+                </td>
+                <td>
+                    Please check your diet preferencies: <br>
+                    <div>
+                      <input name="Vegeterian" type="checkbox"/> Vegeterian
+                    </div>
+                    <div>
+                        <input name="Kosher" type="checkbox"/> Kosher
+                    </<div>
+                    <div>
+                        <input name="Low Fat" type="checkbox"/> Low Fat
+                    </div>
+                    <div>
+                        <input name="Low Sugar" type="checkbox"/> Low Sugar
+                    </div>
+                    <div>
+                      <input name="Quick&Easy" type="checkbox"/> Easy-Cooking
+                    </div>
+
+                </td>
+        </tr>
+        <br><br>
+        <tr>
+            <td>
+                Please choose your meal type:<br>
+                     <div>
+                      <input name='meal' value="breakfast" type="radio"/>  Breakfast
+                    </div>
+                    <div>
+                      <input name='meal' value="lunch" type="radio"/> Lunch
+                    </div>
+                    <div>
+                        <input name='meal' value="snack" type="radio"/> Snack
+                    </<div>
+                    <div>
+                        <input  name='meal' value="house cocktail" type="radio"/> Cocktails
+                    </div>
+                    <div>
+                        <input name='meal' value="smoothie" type="radio"/> Smoothie
+                    </div>
+
+        </tr>
+
+    </table>
+    <br>
+    <button class="btn btn-primary" type="submit"> Search </button>
+    </form>
+
+{% endblock %}

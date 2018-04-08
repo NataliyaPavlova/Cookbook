@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+  {% if results_number==0 %}
+      <div> You have no favorite recipes yet... </div>
+  {% else %}
+      <div>Number of recipes: {{ results_number }} </div><br>
+      <div>Your favorite recipes are: </div><br>
+
+            {% for recipe in recipes_result %}
+                  <div> <a href="/recipe_favor?title={{ recipe }}"> {{ recipe }} </a> </div>
+            {% endfor %}
+ {% endif %}
+{% endblock %}

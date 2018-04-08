@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Recipe
+{% endblock %}
+
+{% block main %}
+
+  <div><a href="/">  Back to favorite recipes </a></div><br>
+
+  <br>
+  <div><b>{{ recipe['title'] }} </b></div><br>
+
+  <div>Ingredients:
+          <ul> {% for string in recipe['ingredients'] %}
+               <li> {{ string }} </li>
+               {% endfor %}
+          </ul>
+  </div>
+
+  <div>Directions: {% for string in recipe['directions'] %}
+      &nbsp;&nbsp; &nbsp; {{ string }} <br>
+                    {% endfor %}
+        </div>
+                    <br><br>
+
+{% endblock %}
